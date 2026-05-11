@@ -11,92 +11,54 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-const socialLinks = [
-  { label: "LinkedIn", href: "#" },
-  { label: "Email", href: "mailto:hello@lewix.ai" },
-];
-
 export function Footer() {
   return (
-    <footer
-      className="relative border-t border-white/[0.06]"
-      style={{
-        backdropFilter: "blur(12px) saturate(150%)",
-        background: "rgba(255, 255, 255, 0.02)",
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 py-12 md:py-20">
-        <FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8">
-            {/* Brand */}
-            <div>
+    <footer className="relative overflow-hidden border-t border-white/[0.06]">
+      <FadeIn>
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-10 lg:px-16 pt-16 md:pt-24 pb-8">
+          {/* Nav links row */}
+          <div className="flex flex-wrap items-center gap-6 md:gap-10">
+            {navLinks.map((link) => (
               <Link
-                href="/"
-                className="font-display font-bold text-xl tracking-[0.3em] uppercase text-text-primary"
+                key={link.href}
+                href={link.href}
                 data-cursor="pointer"
+                className="relative text-xs font-display font-semibold uppercase tracking-wider text-text-secondary hover:text-text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-text-primary hover:after:w-full after:transition-all after:duration-300"
               >
-                LEWIX
+                {link.label}
               </Link>
-              <p className="mt-4 text-sm text-text-secondary leading-relaxed max-w-xs">
-                We engineer production-grade systems that businesses depend on
-                every day.
-              </p>
-            </div>
+            ))}
 
-            {/* Navigation */}
-            <div>
-              <h4 className="text-xs font-body uppercase tracking-widest text-text-muted mb-4">
-                Navigation
-              </h4>
-              <ul className="space-y-3">
-                {navLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      data-cursor="pointer"
-                      className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-300"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Connect */}
-            <div>
-              <h4 className="text-xs font-body uppercase tracking-widest text-text-muted mb-4">
-                Connect
-              </h4>
-              <ul className="space-y-3">
-                {socialLinks.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-cursor="pointer"
-                      className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-300"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <a
+              href="mailto:hello@lewix.ai"
+              data-cursor="pointer"
+              className="relative text-xs font-display font-semibold uppercase tracking-wider text-text-secondary hover:text-text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-text-primary hover:after:w-full after:transition-all after:duration-300 md:ml-auto"
+            >
+              hello@lewix.ai
+            </a>
           </div>
 
-          {/* Bottom bar */}
-          <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-text-muted">
-              &copy; {new Date().getFullYear()} Lewix.ai. All rights reserved.
+          {/* Giant LEWIX wordmark */}
+          <div className="mt-12 md:mt-16 -mx-2">
+            <span
+              className="block font-display font-bold leading-[0.8] tracking-tight text-[clamp(4rem,15vw,13rem)] select-none"
+              style={{ color: "rgba(255, 255, 255, 0.04)" }}
+            >
+              LEWIX
+            </span>
+          </div>
+
+          {/* Bottom metadata */}
+          <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <p className="text-[10px] md:text-xs text-text-muted uppercase tracking-wider">
+              &copy; {new Date().getFullYear()} Lewix.ai
             </p>
-            <p className="text-xs text-text-muted">
-              Engineered in Malaysia
+            <p className="text-[10px] md:text-xs text-text-muted uppercase tracking-wider">
+              Engineered in Johor Bahru, Malaysia
             </p>
           </div>
-        </FadeIn>
-      </div>
+        </div>
+      </FadeIn>
     </footer>
   );
 }

@@ -149,6 +149,15 @@ export default function ContactPage() {
                       >
                         +60 12-381 2500 <span className="text-sm text-text-muted">Noel</span>
                       </a>
+                      <a
+                        href="https://wa.me/60139078719"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-cursor="pointer"
+                        className="block text-lg text-text-primary hover:text-accent transition-colors"
+                      >
+                        +60 13-907 8719 <span className="text-sm text-text-muted">Fakhrul</span>
+                      </a>
                     </div>
                   </div>
 
