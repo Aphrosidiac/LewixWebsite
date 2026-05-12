@@ -27,7 +27,7 @@ export function Hero() {
           className="flex items-center justify-between"
         >
           <h1 className="font-display font-bold leading-[0.9] tracking-tight">
-            <span className="block text-[clamp(3rem,15vw,13rem)]">
+            <span className="block text-[clamp(3rem,15vw,13rem)] gradient-text">
               LEWIX
             </span>
           </h1>
