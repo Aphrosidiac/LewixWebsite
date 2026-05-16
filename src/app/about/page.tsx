@@ -49,7 +49,7 @@ export default function AboutPage() {
           <FadeUp delay={0.15}>
             <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
               <p className="text-text-secondary text-base md:text-lg leading-relaxed">
-                Lewix.ai was founded in Johor Bahru, Malaysia with one goal —
+                Lewix.ai was founded in Malaysia with one goal —
                 build the systems that businesses actually need to run. Not
                 templates. Not MVPs that never grow up. Real, production-grade
                 platforms that handle inventory, invoicing, deliveries, and

@@ -13,7 +13,7 @@ export function Hero() {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <span className="text-[10px] md:text-[11px] font-body uppercase tracking-widest text-text-muted">
-          (Est. 2026 — Johor Bahru, MY)
+          (Est. 2026 — Malaysia)
         </span>
       </motion.div>
 

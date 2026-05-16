@@ -54,7 +54,7 @@ export function Footer() {
               &copy; {new Date().getFullYear()} Lewix.ai
             </p>
             <p className="text-[10px] md:text-xs text-text-muted uppercase tracking-wider">
-              Engineered in Johor Bahru, Malaysia
+              Engineered in Malaysia
             </p>
           </div>
         </div>
