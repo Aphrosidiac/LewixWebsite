@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useState } from "react";
@@ -60,14 +61,21 @@ export function Navbar() {
           }}
           onMouseLeave={() => setHoveredHref(null)}
         >
-          {/* Wordmark */}
+          {/* Logo */}
           <Link
             href="/"
-            className="px-5 py-2 font-display font-bold text-sm tracking-[0.25em] uppercase text-text-primary hover:text-accent transition-colors duration-300"
+            className="px-4 py-1.5 flex items-center"
             data-cursor="pointer"
             onMouseEnter={() => setHoveredHref("/")}
           >
-            LEWIX
+            <Image
+              src="/logos/lewix-logo-dark.png"
+              alt="LEWIX"
+              width={90}
+              height={20}
+              className="h-5 w-auto"
+              priority
+            />
           </Link>
 
           {/* Divider */}
@@ -142,11 +150,15 @@ export function Navbar() {
             boxShadow: "0 4px 30px rgba(0, 0, 0, 0.4)",
           }}
         >
-          <Link
-            href="/"
-            className="font-display font-bold text-sm tracking-[0.25em] uppercase text-text-primary"
-          >
-            LEWIX
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logos/lewix-logomark.png"
+              alt="LEWIX"
+              width={24}
+              height={24}
+              className="h-6 w-auto"
+              priority
+            />
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
