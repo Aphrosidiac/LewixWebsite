@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { FadeIn } from "@/components/ui/animations";
 
 const navLinks = [
@@ -39,16 +38,14 @@ export function Footer() {
             </a>
           </div>
 
-          {/* Giant LEWIX logo */}
-          <div className="mt-12 md:mt-16 -mx-2 select-none opacity-[0.04]">
-            <Image
-              src="/logos/lewix-logo-white.png"
-              alt=""
-              width={800}
-              height={128}
-              className="h-[clamp(4rem,15vw,13rem)] w-auto"
-              aria-hidden="true"
-            />
+          {/* Giant LEWIX wordmark */}
+          <div className="mt-12 md:mt-16 -mx-2">
+            <span
+              className="block font-display font-bold leading-[0.8] tracking-tight text-[clamp(4rem,15vw,13rem)] select-none"
+              style={{ color: "rgba(255, 255, 255, 0.04)" }}
+            >
+              LEWIX
+            </span>
           </div>
 
           {/* Bottom metadata */}

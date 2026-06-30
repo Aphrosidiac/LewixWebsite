@@ -1,34 +1,43 @@
 "use client";
 
-import Image from "next/image";
+import { motion } from "motion/react";
 import Link from "next/link";
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-between px-5 sm:px-6 md:px-10 lg:px-16 pt-24 md:pt-28 pb-8 md:pb-10">
       {/* Top metadata */}
-      <div className="animate-fade-in">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
         <span className="text-[10px] md:text-[11px] font-body uppercase tracking-widest text-text-muted">
           (Est. 2026 — Malaysia)
         </span>
-      </div>
+      </motion.div>
 
       {/* Center — massive name + description */}
       <div className="flex-1 flex flex-col justify-center -mt-6 md:-mt-10">
         {/* Giant wordmark + CTAs on same line */}
-        <div className="flex items-center justify-between animate-fade-in-up">
-          <h1>
-            <Image
-              src="/logos/lewix-logo-dark.png"
-              alt="LEWIX"
-              width={800}
-              height={128}
-              className="h-[clamp(3rem,12vw,10rem)] w-auto"
-              priority
-            />
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+          className="flex items-center justify-between"
+        >
+          <h1 className="font-display font-bold leading-[0.9] tracking-tight">
+            <span className="block text-[clamp(3rem,15vw,13rem)] gradient-text">
+              LEWIX
+            </span>
           </h1>
 
-          <div className="hidden md:flex items-center gap-8 mr-8 lg:mr-16 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="hidden md:flex items-center gap-8 mr-8 lg:mr-16"
+          >
             <Link
               href="/contact"
               data-cursor="pointer"
@@ -43,11 +52,16 @@ export function Hero() {
             >
               View Work
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* .AI + Description */}
-        <div className="mt-3 md:mt-2 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mt-3 md:mt-2"
+        >
           <span className="text-[clamp(1rem,3vw,2.5rem)] font-display font-medium text-text-secondary tracking-[0.15em] uppercase">
             .AI
           </span>
@@ -73,11 +87,16 @@ export function Hero() {
               View Work
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Bottom service tags */}
-      <div className="flex items-center gap-3 sm:gap-4 md:gap-6 flex-wrap animate-fade-in" style={{ animationDelay: "0.5s" }}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        className="flex items-center gap-3 sm:gap-4 md:gap-6 flex-wrap"
+      >
         {["Systems", "Web Apps", "AI", "Logistics"].map((service, i) => (
           <span key={service} className="flex items-center gap-3 sm:gap-4 md:gap-6">
             <span className="text-[10px] sm:text-xs md:text-sm font-display font-semibold uppercase tracking-wider text-text-secondary">
@@ -88,7 +107,7 @@ export function Hero() {
             )}
           </span>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
